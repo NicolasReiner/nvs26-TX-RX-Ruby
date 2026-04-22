@@ -25,8 +25,6 @@ require 'socket'
 require 'digest'
 
 
-def build_last_packet(transmission_id, seq_nr, data)
-
 # Builds the first packet to initiate the file transfer.
 # Format: TransmissionId (2 bytes), SeqNr (4 bytes), MaxSeqNr (4 bytes), Filename (8-2048 bytes)
 # transmission_id: unique identifier for this transfer (string or number)
@@ -111,6 +109,7 @@ def send_file(filename, destination_ip, destination_port)
   # Close the socket after sending all packets
   socket.close
 end
+
 
 
 # Example usage: send 'example.txt' to localhost on port 5000
